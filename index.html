@@ -1,52 +1,166 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu Primeiro Site</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body{
-      font-family: Arial, sans-serif;
-      background:#f5f5f5;
-      text-align:center;
-      padding:50px;
-    }
+<title>EditoraShopNoitedia</title>
 
-    .card{
-      background:white;
-      padding:30px;
-      max-width:600px;
-      margin:auto;
-      border-radius:12px;
-      box-shadow:0 0 15px rgba(0,0,0,.1);
-    }
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    h1{
-      color:#0077cc;
-    }
+body{
+font-family:Arial, sans-serif;
+background:#f4f6f9;
+color:#333;
+}
 
-    button{
-      padding:12px 20px;
-      border:none;
-      background:#0077cc;
-      color:white;
-      border-radius:8px;
-      cursor:pointer;
-    }
-  </style>
+header{
+background:#0d1b2a;
+color:white;
+padding:30px;
+text-align:center;
+}
+
+header h1{
+font-size:2.5rem;
+}
+
+header p{
+margin-top:10px;
+font-size:1.1rem;
+}
+
+.hero{
+padding:60px 20px;
+text-align:center;
+background:white;
+}
+
+.hero h2{
+font-size:2rem;
+margin-bottom:15px;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+line-height:1.7;
+}
+
+.botao{
+display:inline-block;
+margin-top:25px;
+padding:15px 30px;
+background:#25D366;
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+}
+
+.produtos{
+padding:50px 20px;
+}
+
+.produtos h2{
+text-align:center;
+margin-bottom:30px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+max-width:1100px;
+margin:auto;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+.card h3{
+margin-bottom:10px;
+}
+
+.preco{
+color:#0066cc;
+font-size:1.4rem;
+font-weight:bold;
+margin:15px 0;
+}
+
+footer{
+background:#0d1b2a;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+</style>
 </head>
+
 <body>
 
+<header>
+<h1>EditoraShopNoitedia</h1>
+<p>E-books, Apostilas, Cursos e Conteúdo Digital de Alta Qualidade</p>
+</header>
+
+<section class="hero">
+<h2>Conhecimento ao seu alcance</h2>
+
+<p>
+Bem-vindo à EditoraShopNoitedia.
+Aqui você encontra e-books, materiais educativos,
+apostilas, guias práticos e conteúdos digitais para estudo,
+crescimento pessoal e desenvolvimento profissional.
+</p>
+
+<a class="botao" href="https://wa.me/5500000000000">
+Falar no WhatsApp
+</a>
+</section>
+
+<section class="produtos">
+
+<h2>Produtos em Destaque</h2>
+
+<div class="grid">
+
 <div class="card">
-  <h1>Meu Primeiro Site</h1>
-
-  <p>Este site foi criado por mim com a ajuda do ChatGPT.</p>
-
-  <button onclick="alert('Parabéns! Seu site está funcionando!')">
-    Clique aqui
-  </button>
+<h3>E-book Marketing Digital</h3>
+<p>Aprenda estratégias modernas para vender online.</p>
+<div class="preco">R$ 29,90</div>
 </div>
+
+<div class="card">
+<h3>Guia Completo de IA</h3>
+<p>Aprenda a utilizar Inteligência Artificial no dia a dia.</p>
+<div class="preco">R$ 49,90</div>
+</div>
+
+<div class="card">
+<h3>Curso Empreendedor Digital</h3>
+<p>Passo a passo para iniciar um negócio online.</p>
+<div class="preco">R$ 97,90</div>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 EditoraShopNoitedia - Todos os direitos reservados.
+</footer>
 
 </body>
 </html>
