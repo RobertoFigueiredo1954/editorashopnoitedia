@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação da Capa - Como Encontrar Uma Pessoa</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        charcoal: {
+                            800: '#1e2022',
+                            900: '#121315',
+                            950: '#0a0b0c',
+                        },
+                        accent: {
+                            gold: '#b08b26', /* Amarelo dourado escuro para alto contraste em fundo claro */
+                            goldLight: '#d4af37', /* Amarelo dourado brilhante */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .book-container {
+            perspective: 1200px;
+        }
+        .book-3d {
+            width: 320px;
+            height: 480px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            transform: rotateY(-20deg) rotateX(10deg);
+        }
+        .book-container:hover .book-3d {
+            transform: rotateY(-5deg) rotateX(5deg);
+        }
+        /* Capa cinza claro */
+        .book-front {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #f1f5f9; /* Cinza claro suave (Slate 100) */
+            backface-visibility: hidden;
+            z-index: 2;
+            box-shadow: 5px 10px 30px rgba(0,0,0,0.15);
+            border-radius: 0 4px 4px 0;
+        }
+        /* Lombada do Livro em tons de cinza claro */
+        .book-spine {
+            position: absolute;
+            width: 30px;
+            height: 100%;
+            background: linear-gradient(90deg, #cbd5e1 0%, #f1f5f9 50%, #cbd5e1 100%);
+            transform: rotateY(-90deg) translateZ(15px);
+            transform-origin: left center;
+            left: 0;
+            z-index: 1;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.15);
+        }
+        /* Sombra realista projetada */
+        .book-shadow {
+            position: absolute;
+            width: 320px;
+            height: 20px;
+            background: rgba(0,0,0,0.12);
+            border-radius: 50%;
+            filter: blur(8px);
+            bottom: -30px;
+            transform: rotateX(85deg);
+            z-index: -1;
+        }
+        /* Texturas de Papel Linho Nobre (Fundo Cinza Claro) */
+        .linen-texture {
+            background-image: radial-gradient(rgba(0,0,0,0.02) 1px, transparent 0),
+                              radial-gradient(rgba(0,0,0,0.015) 1px, transparent 0);
+            background-size: 8px 8px;
+            background-position: 0 0, 4px 4px;
+            border: 1px solid rgba(0,0,0,0.08);
+        }
+    </style>
+</head>
+<body class="bg-charcoal-950 text-gray-100 min-h-screen font-sans antialiased">
+
+    <!-- Container Principal de Demonstração -->
+    <div class="max-w-6xl mx-auto px-4 py-12">
+        
+        <header class="text-center mb-12">
+            <span class="text-accent-goldLight text-xs font-semibold tracking-widest uppercase bg-charcoal-900 border border-charcoal-800 px-4 py-1.5 rounded-full">Visualizador do Infoproduto</span>
+            <h1 class="text-3xl md:text-4xl font-serif font-bold text-white mt-4 mb-2">Apresentação da Capa Oficial</h1>
+            <p class="text-gray-400 max-w-xl mx-auto text-sm">Design atualizado: Tons de cinza claro texturizado, detalhes em ouro envelhecido e tipografia preta para máxima elegância.</p>
+        </header>
+
+        <!-- Grade de Layout: Esquerda (Controles/Info) | Direita (Preview Interativo) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-5 space-y-6">
+                <div class="bg-charcoal-900 border border-charcoal-800 rounded-2xl p-6 shadow-xl">
+                    <h2 class="text-xl font-serif font-bold text-white mb-4 border-b border-charcoal-800 pb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-circle-info text-accent-goldLight"></i> Detalhes do Projeto
+                    </h2>
+                    
+                    <ul class="space-y-4 text-sm text-gray-300">
+                        <li class="flex items-start gap-3">
+                            <span class="text-accent-goldLight mt-1"><i class="fa-solid fa-heading"></i></span>
+                            <div>
+                                <strong class="block text-white">Título Principal (Amarelo Dourado):</strong>
+                                "Como Encontrar Uma Pessoa Anos"
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-accent-goldLight mt-1"><i class="fa-solid fa-paragraph"></i></span>
+                            <div>
+                                <strong class="block text-white">Subtítulo (Preto):</strong>
+                                "(Mesmo Sem Ter Quase Nenhuma Informação)"
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-accent-goldLight mt-1"><i class="fa-solid fa-palette"></i></span>
+                            <div>
+                                <strong class="block text-white">Nova Paleta de Cores:</strong>
+                                Cinza Claro Soft, Amarelo Dourado Ouro e Preto Puro (Legibilidade Elevada).
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-accent-goldLight mt-1"><i class="fa-solid fa-building"></i></span>
+                            <div>
+                                <strong class="block text-white">Selo de Publicação:</strong>
+                                Editora <span class="font-bold text-white">ShopNoiteDia</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-charcoal-900 border border-charcoal-800 rounded-2xl p-6 shadow-xl space-y-4">
+                    <h3 class="text-md font-semibold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-wand-magic-sparkles text-accent-goldLight"></i> Mudanças Aplicadas
+                    </h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        A transição para o cinza claro removeu a sensação de perigo extremo ou "clima policial agressivo" e transformou o e-book em uma obra com estética de <strong>documento histórico premium</strong> e <strong>método acadêmico de investigação civil</strong>. O dourado envelhecido traz luz e destaque ao título principal.
+                    </p>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 flex flex-col items-center justify-center py-6">
+                
+                <!-- Abas de seleção de Visualização -->
+                <div class="flex bg-charcoal-900 p-1 rounded-xl border border-charcoal-800 mb-8 shadow-inner">
+                    <button id="btn-3d" onclick="switchView('3d')" class="px-5 py-2 rounded-lg text-xs font-semibold tracking-wider uppercase transition-all duration-300 bg-accent-goldLight text-charcoal-950 shadow-md">
+                        <i class="fa-solid fa-cube mr-1"></i> Maquete 3D
+                    </button>
+                    <button id="btn-flat" onclick="switchView('flat')" class="px-5 py-2 rounded-lg text-xs font-semibold tracking-wider uppercase transition-all duration-300 text-gray-400 hover:text-white">
+                        <i class="fa-solid fa-file-image mr-1"></i> Capa Plana
+                    </button>
+                </div>
+
+                <!-- Wrapper do Livro -->
+                <div class="relative flex items-center justify-center min-h-[520px] w-full">
+                    
+                    <!-- VISUALIZAÇÃO 3D -->
+                    <div id="view-3d" class="book-container relative">
+                        <div class="book-shadow"></div>
+                        <div class="book-3d">
+                            <!-- Lombada do Livro -->
+                            <div class="book-spine flex flex-col justify-between items-center py-8 text-[9px] font-bold text-black tracking-widest uppercase font-sans">
+                                <span class="transform -rotate-90 origin-center whitespace-nowrap text-neutral-800">Como Encontrar Uma Pessoa Anos</span>
+                                <span class="text-accent-gold font-extrabold">SND</span>
+                            </div>
+                            
+                            <!-- Capa Frontal do Livro 3D -->
+                            <div class="book-front overflow-hidden linen-texture">
+                                <!-- Conteúdo da Capa -->
+                                <div class="h-full flex flex-col justify-between p-6 relative">
+                                    <!-- Degradê de Vinheta Suave nas Bordas (Em cinza claro/branco para suavizar) -->
+                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-200/50 via-transparent to-slate-200/30 pointer-events-none z-10"></div>
+                                    
+                                    <!-- Parte Superior: Header Temático (Preto) -->
+                                    <div class="text-center z-20">
+                                        <p class="text-[10px] text-black tracking-[0.25em] font-sans font-extrabold uppercase mb-2">MANUAL DE INVESTIGAÇÃO CIVIL</p>
+                                        <div class="h-[1.5px] w-12 bg-black mx-auto"></div>
+                                    </div>
+
+                                    <!-- Parte Central: Título Nobre Maior (Amarelo Dourado e Preto) -->
+                                    <div class="text-center z-20 my-2">
+                                        <!-- Letras Maiores em Amarelo Dourado -->
+                                        <h2 class="font-serif font-black text-3xl md:text-4xl text-accent-gold tracking-wide uppercase leading-none drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.15)]">
+                                            Como Encontrar <br>
+                                            <span class="text-accent-gold text-4xl md:text-5xl block mt-2">Uma Pessoa</span>
+                                            <span class="text-neutral-900 font-extrabold text-xl block tracking-[0.15em] mt-2">Anos Depois</span>
+                                        </h2>
+                                        
+                                        <!-- Subtítulo em Preto -->
+                                        <p class="font-sans text-[11px] text-black mt-4 leading-relaxed font-bold italic px-2">
+                                            (Mesmo Sem Ter Quase Nenhuma Informação)
+                                        </p>
+                                    </div>
+
+                                    <!-- Imagem do Detetive Clássico (Adaptada para fundo claro) -->
+                                    <div class="absolute inset-x-0 bottom-16 h-56 z-0 opacity-85 mix-blend-multiply overflow-hidden">
+                                        <img src="watermarked_img_7708890040520391376.png" alt="Detetive Clássico investigando" class="w-full h-full object-cover object-center grayscale contrast-125 brightness-105">
+                                        <!-- Soft Fade Overlay para misturar com o fundo cinza claro -->
+                                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-slate-100/20 to-slate-100"></div>
+                                    </div>
+
+                                    <!-- Parte Inferior: Rodapé com Editora (Preto) -->
+                                    <div class="text-center z-20 border-t border-slate-300/60 pt-3">
+                                        <p class="text-[10px] text-black tracking-wider font-sans uppercase">
+                                            Editora <span class="font-black text-black">ShopNoiteDia</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- VISUALIZAÇÃO PLANA (Capa do Livro em Detalhe Estático) -->
+                    <div id="view-flat" class="hidden w-[380px] h-[570px] bg-slate-100 border border-slate-300 rounded-lg shadow-2xl relative overflow-hidden linen-texture">
+                        <!-- Degradê de Vinheta Suave -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-200/50 via-transparent to-slate-200/40 pointer-events-none z-10"></div>
+                        
+                        <!-- Conteúdo da Capa Plana -->
+                        <div class="h-full flex flex-col justify-between p-8 relative">
+                            
+                            <!-- Parte Superior: Header (Preto) -->
+                            <div class="text-center z-20">
+                                <p class="text-xs text-black tracking-[0.3em] font-sans font-extrabold uppercase mb-2">MANUAL DE INVESTIGAÇÃO CIVIL</p>
+                                <div class="h-[2px] w-16 bg-black mx-auto"></div>
+                            </div>
+
+                            <!-- Parte Central: Título Ampliado -->
+                            <div class="text-center z-20 my-auto">
+                                <h2 class="font-serif font-black text-4xl md:text-5xl text-accent-gold tracking-wider uppercase leading-none drop-shadow-[0_1.5px_1.5px_rgba(0,0,0,0.15)]">
+                                    Como Encontrar <br>
+                                    <span class="text-accent-gold text-5xl md:text-6xl block mt-3">Uma Pessoa</span>
+                                    <span class="text-neutral-900 font-extrabold text-2xl block tracking-[0.2em] mt-3">Anos Depois</span>
+                                </h2>
+                                
+                                <!-- Subtítulo (Preto) -->
+                                <p class="font-sans text-xs md:text-sm text-black mt-6 leading-relaxed font-bold italic max-w-xs mx-auto">
+                                    (Mesmo Sem Ter Quase Nenhuma Informação)
+                                </p>
+                            </div>
+
+                            <!-- Imagem do Detetive (Mesclagem perfeita com fundo claro) -->
+                            <div class="absolute inset-x-0 bottom-24 h-64 z-0 opacity-90 mix-blend-multiply overflow-hidden">
+                                <img src="watermarked_img_7708890040520391376.png" alt="Detetive Clássico investigando pistas em Lisboa" class="w-full h-full object-cover object-top grayscale contrast-125 brightness-105">
+                                <div class="absolute inset-0 bg-gradient-to-b from-transparent via-slate-100/35 to-slate-100"></div>
+                            </div>
+
+                            <!-- Parte Inferior: Rodapé (Preto em Negrito) -->
+                            <div class="text-center z-20 border-t border-slate-300/80 pt-4">
+                                <p class="text-xs text-black tracking-widest font-sans uppercase">
+                                    Editora <span class="font-black text-black">ShopNoiteDia</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Script Simples para Alternar Visualização -->
+    <script>
+        function switchView(view) {
+            const view3d = document.getElementById('view-3d');
+            const viewFlat = document.getElementById('view-flat');
+            const btn3d = document.getElementById('btn-3d');
+            const btnFlat = document.getElementById('btn-flat');
+
+            if (view === '3d') {
+                view3d.classList.remove('hidden');
+                viewFlat.classList.add('hidden');
+                
+                btn3d.className = 'px-5 py-2 rounded-lg text-xs font-semibold tracking-wider uppercase transition-all duration-300 bg-accent-goldLight text-charcoal-950 shadow-md';
+                btnFlat.className = 'px-5 py-2 rounded-lg text-xs font-semibold tracking-wider uppercase transition-all duration-300 text-gray-400 hover:text-white';
+            } else {
+                view3d.classList.add('hidden');
+                viewFlat.classList.remove('hidden');
+
+                btnFlat.className = 'px-5 py-2 rounded-lg text-xs font-semibold tracking-wider uppercase transition-all duration-300 bg-accent-goldLight text-charcoal-950 shadow-md';
+                btn3d.className = 'px-5 py-2 rounded-lg text-xs font-semibold tracking-wider uppercase transition-all duration-300 text-gray-400 hover:text-white';
+            }
+        }
+    </script>
+</body>
+</html>
