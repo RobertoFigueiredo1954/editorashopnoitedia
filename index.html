@@ -1,214 +1,107 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>EditoraShopNoiteDia</title>
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-
-body{
-font-family:Arial, sans-serif;
-background:#f4f6f9;
-color:#333;
-}
-
-header{
-background:#0d1b2a;
-color:white;
-padding:30px;
-text-align:center;
-}
-
-header h1{font-size:2.5rem;}
-
-.hero{
-padding:80px 20px;
-text-align:center;
-background:white;
-}
-
-.hero h2{
-font-size:2.3rem;
-margin-bottom:15px;
-}
-
-.hero p{
-max-width:750px;
-margin:auto;
-line-height:1.7;
-font-size:1.1rem;
-}
-
-.botao{
-display:inline-block;
-margin-top:25px;
-padding:16px 32px;
-background:#25D366;
-color:white;
-text-decoration:none;
-border-radius:10px;
-font-weight:bold;
-font-size:1.1rem;
-transition:0.3s;
-}
-
-.botao:hover{opacity:0.9;}
-
-.section{
-padding:60px 20px;
-text-align:center;
-background:#fff;
-margin-top:10px;
-}
-
-.section h2{
-margin-bottom:25px;
-font-size:2rem;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-max-width:1100px;
-margin:auto;
-}
-
-.card{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 2px 10px rgba(0,0,0,.1);
-}
-
-.badge{
-display:inline-block;
-background:#ff6600;
-color:white;
-padding:5px 10px;
-border-radius:5px;
-font-size:0.8rem;
-margin-bottom:10px;
-}
-
-.highlight{
-color:#ff6600;
-font-weight:bold;
-}
-
-footer{
-background:#0d1b2a;
-color:white;
-text-align:center;
-padding:20px;
-margin-top:40px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EditoraShopNoiteDia - Conhecimento Digital</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #0b0f19; color: #f3f4f6; line-height: 1.6; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; padding: 60px 20px; background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); border-bottom: 2px solid #fbbf24; border-radius: 0 0 20px 20px; }
+        .logo { font-size: 1.8rem; font-weight: bold; color: #fbbf24; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; }
+        h1 { font-size: 2.5rem; margin-bottom: 15px; color: #ffffff; }
+        .subtitle { font-size: 1.2rem; color: #9ca3af; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .cta-btn { display: inline-block; background-color: #fbbf24; color: #0b0f19; padding: 15px 40px; font-weight: bold; text-decoration: none; border-radius: 30px; font-size: 1.2rem; transition: 0.3s; box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3); text-transform: uppercase; }
+        .cta-btn:hover { background-color: #f59e0b; transform: translateY(-2px); }
+        .section { padding: 60px 0; }
+        .section-title { text-align: center; font-size: 2rem; margin-bottom: 40px; color: #fbbf24; }
+        .intro-box { background-color: #111827; border: 1px solid #374151; padding: 30px; border-radius: 15px; text-align: center; max-width: 800px; margin: 0 auto; }
+        .intro-box p { font-size: 1.1rem; color: #d1d5db; margin-bottom: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 20px; }
+        .card { background-color: #1f2937; border: 1px solid #374151; padding: 25px; border-radius: 15px; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); border-color: #fbbf24; }
+        .card h3 { color: #ffffff; margin-bottom: 10px; font-size: 1.3rem; }
+        .card p { color: #9ca3af; font-size: 1rem; }
+        .testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .testimonial-item { background-color: #111827; border-left: 4px solid #fbbf24; padding: 20px; border-radius: 0 15px 15px 0; font-style: italic; }
+        .testimonial-item span { display: block; margin-top: 10px; color: #fbbf24; font-weight: bold; font-style: normal; }
+        .whatsapp-section { text-align: center; background: #111827; padding: 40px; border-radius: 15px; border: 1px dashed #374151; }
+        .whatsapp-btn { display: inline-block; background-color: #25d366; color: white; padding: 12px 30px; font-weight: bold; text-decoration: none; border-radius: 30px; margin-top: 20px; transition: 0.3s; }
+        .whatsapp-btn:hover { background-color: #128c7e; }
+        footer { text-align: center; padding: 40px 20px; color: #6b7280; font-size: 0.9rem; margin-top: 40px; border-top: 1px solid #1f2937; }
+        @media (max-width: 768px) { h1 { font-size: 1.8rem; } .section-title { font-size: 1.6rem; } }
+    </style>
 </head>
-
 <body>
 
-<header>
-<h1>EditoraShopNoiteDia</h1>
-<p>Conhecimento digital para quem quer começar a ganhar dinheiro online</p>
-</header>
+    <header>
+        <div class="logo">EditoraShopNoiteDia</div>
+        <h1>Conhecimento digital para quem quer começar a ganhar dinheiro online</h1>
+        <p class="subtitle">Aprenda habilidades digitais e saia do zero absoluto!</p>
+        <a href="https://pay.kiwify.com.br/AqUuOmx" target="_blank" class="cta-btn">COMECE HOJE MESMO</a>
+    </header>
 
-<!-- HERO -->
-<section class="hero">
+    <div class="container">
+        
+        <section class="section">
+            <div class="intro-box">
+                <p>Você não precisa de experiência. Aqui você encontra e-books e guias simples que ensinam marketing digital, inteligência artificial e empreendedorismo online de forma prática.</p>
+                <p><strong>Ideal para quem quer começar a gerar renda pela internet.</strong></p>
+                <a href="https://pay.kiwify.com.br/AqUuOmx" target="_blank" class="cta-btn" style="font-size: 1rem; padding: 10px 25px;">QUERO COMPRAR AGORA</a>
+            </div>
+        </section>
 
-<div class="badge">COMECE HOJE MESMO</div>
+        <section class="section">
+            <h2 class="section-title">O que você vai receber</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>📚 E-book Marketing Digital</h3>
+                    <p>Aprenda a vender produtos online mesmo começando do zero absoluto.</p>
+                </div>
+                <div class="card">
+                    <h3>🤖 Guia de Inteligência Artificial</h3>
+                    <p>Use a IA a seu favor para trabalhar muito mais rápido e ganhar produtividade.</p>
+                </div>
+                <div class="card">
+                    <h3>🚀 Roteiro Empreendedor Digital</h3>
+                    <p>Um passo a passo simples e prático para criar sua estrutura de renda online.</p>
+                </div>
+            </div>
+        </section>
 
-<h2>Aprenda habilidades digitais e saia do zero absoluto</h2>
+        <section class="section">
+            <h2 class="section-title">Resultados de quem já começou</h2>
+            <div class="testimonials">
+                <div class="testimonial-item">
+                    "Consegui entender tudo de forma simples e prática. Recomendo muito!"
+                    <span>- João</span>
+                </div>
+                <div class="testimonial-item">
+                    "Finalmente saí da confusão mental e comecei a agir de verdade."
+                    <span>- Mariana</span>
+                </div>
+                <div class="testimonial-item">
+                    "Conteúdo muito direto ao ponto, sem enrolação ou teorias chatas."
+                    <span>- Carlos</span>
+                </div>
+            </div>
+        </section>
 
-<p>
-Você não precisa de experiência. Aqui você encontra e-books e guias simples que ensinam
-marketing digital, inteligência artificial e empreendedorismo online de forma prática.
-<br><br>
+        <section class="section">
+            <div class="whatsapp-section">
+                <h2 style="color: #ffffff; margin-bottom: 10px;">Quer começar agora?</h2>
+                <p style="color: #9ca3af;">Clique no botão abaixo para receber mais informações diretamente no WhatsApp.</p>
+                <!-- DICA: Se quiser, depois posso te ajudar a trocar o '#' abaixo pelo link direto do seu WhatsApp -->
+                <a href="#" target="_blank" class="whatsapp-btn">💬 QUERO COMEÇAR AGORA</a>
+            </div>
+        </section>
 
-<span class="highlight">Ideal para quem quer começar a gerar renda pela internet.</span>
-</p>
+    </div>
 
-<a href="SEU-LINK-DA-KIWIFY" target="_blank">
-QUERO COMPRAR AGORA
-</a>kiwifi
-https://pay.kiwify.com.br/AqUuOmx
-
-</section>
-
-<!-- OFERTA -->
-<section class="section">
-
-<h2>O que você vai receber</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>E-book Marketing Digital</h3>
-<p>Aprenda a vender produtos online mesmo começando do zero.</p>
-</div>
-
-<div class="card">
-<h3>Guia de Inteligência Artificial</h3>
-<p>Use IA para trabalhar mais rápido e ganhar produtividade.</p>
-</div>
-
-<div class="card">
-<h3>Roteiro Empreendedor Digital</h3>
-<p>Passo a passo simples para criar sua renda online.</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- DEPOIMENTOS -->
-<section class="section">
-
-<h2>Resultados de quem já começou</h2>
-
-<div class="grid">
-
-<div class="card">
-“Consegui entender tudo de forma simples e prática.”
-<br><strong>- João</strong>
-</div>
-
-<div class="card">
-“Finalmente saí da confusão e comecei a agir.”
-<br><strong>- Mariana</strong>
-</div>
-
-<div class="card">
-“Conteúdo direto ao ponto, sem enrolação.”
-<br><strong>- Carlos</strong>
-</div>
-
-</div>
-
-</section>
-
-<!-- CTA FINAL -->
-<section class="section">
-
-<h2>Quer começar agora?</h2>
-
-<p>
-Clique no botão abaixo e receba mais informações no WhatsApp.
-Você será direcionado para o próximo passo quando o sistema de pagamento estiver disponível.
-</p>
-
-<a class="botao" href="https://wa.me/5500000000000">
-QUERO COMEÇAR AGORA
-</a>
-
-</section>
-
-<footer>
-© 2026 EditoraShopNoiteDia - Todos os direitos reservados.
-</footer>
+    <footer>
+        <p>&copy; 2026 EditoraShopNoiteDia - Todos os direitos reservados.</p>
+    </footer>
 
 </body>
 </html>
